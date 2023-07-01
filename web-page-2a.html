@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Sign in</title>
+
+    <link rel="stylesheet" href="style-sign-in.css" type="text/css">
+
+</head>
+
+<body>
+    <div class="bg-image"></div>
+    <div class="container">
+        <div class="form-box">
+            <h2>Sign in</h2>
+            <form action="/action.php" name="sign_in_form" onsubmit=" return validation()" method="post">
+                <div class="form-group" id="in-email">
+                    <label for="signin-email" >Email</label>
+                    <input type="email"  name="in_email" required placeholder="abc@gmail.com">
+                    <span class="formerror"></span>
+                </div>
+                <div class="form-group" id="in-password">
+                    <label for="signin-password">Password</label>
+                    <input type="password"  name="in_password" required placeholder="********">
+                    <span class="formerror"></span>
+                </div>
+                <input type="submit" value="Sign-up">
+                <p>Don't Have An Account?<a href="sign-up.html">Sign-up</a></p>
+
+
+            </form>
+        </div>
+    </div>
+</body>
+<script>
+
+    function seterror(id, error) {
+        element = document.getElementById(id);
+        element.getElementsByClassName('formerror')[0].innerHTML = error;
+
+
+    }
+    function validation() {
+        returnval = true;
+        var mail = document.forms["sign_in_form"]["in_email"].value;
+        if (mail.length > 30) {
+            seterror("in-email", "Email Id is too Long ");
+            returnval = false;
+        }
+        var pass = document.forms["sign_in_form"]["in_password"].value;
+        if (pass.length< 8) {
+            seterror("in-password", "Password must be of 8  characters");
+            returnval = false;
+
+        }
+        return returnval;
+
+    }
+</script>
+
+
+</html> 

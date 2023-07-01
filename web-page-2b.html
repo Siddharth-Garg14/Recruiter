@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sign up</title>
+	
+		<link rel="stylesheet" href="style-sign-up.css" type="text/css">
+	
+</head>
+<body>
+    <div class="bg-image"></div>
+    <div class="container">
+		<div class="form-box">
+			<h2>Sign up</h2>
+			<form name="sign-up" action="sign-up.php" onsubmit="return validateForm()" method="post">
+				<div class="form-group" id="full-nm">
+					<label for="signup-name">Full Name:</label>
+					<input type="text" id="sign-up-name" name="signup-nm" required placeholder="Name">
+					<span class="formerror"></span>
+				</div>
+				<div class="form-group" id="email">
+					<label for="signup-email">Email</label>
+					<input type="email" id="sign-up-email" name="signup-email" required placeholder="Email">
+					<span class="formerror"></span>
+				</div>
+				<div class="form-group" id="psd">
+					<label for="signin-password">Password</label>
+					<input type="password"id="sign-in-password"name="signup-password" required placeholder="********">
+					<span class="formerror"></span>
+				</div>
+                <div class="form-group" id="c-psd">
+					<label for="signup-password">Confirm Password</label>
+					<input type="password"id="sign-up-cpassword"name="signup-cpassword" required placeholder="********">
+					<span class="formerror"></span>
+				</div>
+                <input type="submit" value="Sign-up">
+                <p>Already a member?<a href="sign-in.html">Sign-in</a></p>
+				<script src="sign-up.js"></script>
+				
+			</form>
+		    </div>
+        </div>
+	</body>
+</html>
